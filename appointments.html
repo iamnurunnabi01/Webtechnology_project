@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appointments | MediCare</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+<body>
+<div id="message"><span id="message-text"></span> <button class="btn btn-small" onclick="hideMessage()">Close</button></div>
+<div class="header"><a class="brand" href="index.html">MediCare</a><span class="user">Admin User (demo) | <a href="login.html">Log out</a></span></div>
+<div class="topnav"><a href="dashboard.html">Dashboard</a><a href="patients.html">Patients</a><a href="doctors.html">Doctors</a><a href="appointments.html" class="active">Appointments</a><a href="reports.html">Reports (soon)</a><a href="settings.html">Settings (soon)</a></div>
+<div class="page">
+  <div class="page-head">
+    <div class="float-left"><h1>Appointments</h1><p class="muted" id="summary"></p></div>
+    <div class="float-right"><button class="btn btn-primary" onclick="openAppointmentForm('')">New appointment</button></div>
+  </div>
+  <div class="card">
+    <div class="toolbar">
+      <div class="tool"><label for="search">Search</label><input type="text" id="search" placeholder="Patient, doctor, ID or status" oninput="showAppointments()"></div>
+      <div class="tool"><label for="filter-status">Status</label><select id="filter-status" onchange="showAppointments()"><option value="">All statuses</option><option>Pending</option><option>Confirmed</option><option>Completed</option><option>Cancelled</option></select></div>
+      <div class="tool"><label for="filter-doctor">Doctor</label><select id="filter-doctor" onchange="showAppointments()"><option value="">All doctors</option></select></div>
+      <div class="tool"><label for="filter-when">When</label><select id="filter-when" onchange="showAppointments()"><option value="">Any date</option><option value="today">Today</option><option value="upcoming">Upcoming</option><option value="past">Past</option></select></div>
+      <div class="tool"><label for="sort-by">Sort by</label><select id="sort-by" onchange="showAppointments()"><option value="newest">Date, newest first</option><option value="oldest">Date, oldest first</option><option value="patient">Patient name</option><option value="id">Appointment ID</option></select></div>
+    </div>
+    <div class="table-wrap"><table id="appointments-table">
+      <thead><tr><th>ID</th><th>Patient</th><th>Doctor</th><th>Date &amp; time</th><th>Status</th><th>Update status</th><th>Actions</th></tr></thead>
+      <tbody id="appointments-body"></tbody></table></div>
+    <div class="empty" id="empty-state"></div>
+  </div>
+</div>
+
+<div class="modal" id="appointment-modal"><div class="modal-box">
+  <h2 id="appointment-modal-title">New appointment</h2>
+  <form name="appointmentForm" method="post" onsubmit="return saveAppointment()">
+    <div class="form-row">
+      <div class="col-full"><div class="field"><label for="appointmentId">Appointment ID</label><input type="text" id="appointmentId" class="readonly" readonly></div></div>
+      <div class="col-half"><div class="field"><label for="patientId">Patient <span class="required">*</span></label><select id="patientId"></select><span class="error" id="error-patientId"></span></div></div><div class="col-half"><div class="field"><label for="doctorId">Doctor <span class="required">*</span></label><select id="doctorId" onchange="showDoctorHint()"></select><div class="muted small" id="doctor-hint"></div><span class="error" id="error-doctorId"></span></div></div>
+      <div class="col-half"><div class="field"><label for="date">Date <span class="required">*</span></label><input type="date" id="date" ><span class="error" id="error-date"></span></div></div><div class="col-half"><div class="field"><label for="time">Time <span class="required">*</span></label><select id="time"></select><span class="error" id="error-time"></span></div></div><div class="col-half"><div class="field"><label for="reason">Visit type <span class="required">*</span></label><select id="reason"><option>Consultation</option><option>Follow-up visit</option><option>General check-up</option></select><span class="error" id="error-reason"></span></div></div><div class="col-half"><div class="field"><label for="status">Status <span class="required">*</span></label><select id="status"><option>Pending</option><option>Confirmed</option><option>Completed</option><option>Cancelled</option></select><span class="error" id="error-status"></span></div></div>
+    </div>
+    <div class="form-buttons"><button type="button" class="btn" onclick="closeModal('appointment-modal')">Close</button> <input type="submit" class="btn btn-primary" id="save-button" value="Save appointment"></div>
+  </form>
+</div></div>
+
+<div class="modal" id="details-modal"><div class="modal-box">
+  <h2>Appointment details</h2>
+  <table class="details" id="details-table"></table>
+  <div class="form-buttons"><button class="btn" onclick="closeModal('details-modal')">Close</button> <button class="btn btn-primary" onclick="editFromDetails()">Edit appointment</button></div>
+</div></div>
+<div class="footer">MediCare frontend prototype. All data is fictional.</div>
+<script src="js/main.js"></script>
+<script src="js/data.js"></script>
+<script src="js/appointments.js"></script>
+<script>showAppointments();</script>
+</body>
+</html>

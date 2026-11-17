@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doctors | MediCare</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+<body>
+<div id="message"><span id="message-text"></span> <button class="btn btn-small" onclick="hideMessage()">Close</button></div>
+<div class="header"><a class="brand" href="index.html">MediCare</a><span class="user">Admin User (demo) | <a href="login.html">Log out</a></span></div>
+<div class="topnav"><a href="dashboard.html">Dashboard</a><a href="patients.html">Patients</a><a href="doctors.html" class="active">Doctors</a><a href="appointments.html">Appointments</a><a href="reports.html">Reports (soon)</a><a href="settings.html">Settings (soon)</a></div>
+<div class="page">
+  <div class="page-head">
+    <div class="float-left"><h1>Doctors</h1><p class="muted" id="summary"></p></div>
+    <div class="float-right"><button class="btn btn-primary" onclick="openDoctorForm('')">Add doctor</button></div>
+  </div>
+  <div class="card">
+    <div class="toolbar">
+      <div class="tool"><label for="search">Search</label><input type="text" id="search" placeholder="Name, specialization or ID" oninput="showDoctors()"></div>
+      <div class="tool"><label for="filter-specialization">Specialization</label><select id="filter-specialization" onchange="showDoctors()"><option value="">All specializations</option></select></div>
+      <div class="tool"><label for="filter-status">Status</label><select id="filter-status" onchange="showDoctors()"><option value="">All statuses</option><option>Active</option><option>On leave</option><option>Inactive</option></select></div>
+      <div class="tool"><label for="filter-day">Available on</label><select id="filter-day" onchange="showDoctors()"><option value="">Any day</option><option>Sun</option><option>Mon</option><option>Tue</option><option>Wed</option><option>Thu</option><option>Fri</option><option>Sat</option></select></div>
+      <div class="tool"><label for="sort-by">Sort by</label><select id="sort-by" onchange="showDoctors()"><option value="name-asc">Name A to Z</option><option value="fee-asc">Fee, low to high</option><option value="fee-desc">Fee, high to low</option><option value="id">Doctor ID</option></select></div>
+    </div>
+    <div class="card-body"><div class="row" id="doctor-list"></div><div class="empty" id="empty-state"></div></div>
+  </div>
+</div>
+
+<div class="modal" id="doctor-modal"><div class="modal-box">
+  <h2 id="doctor-modal-title">Add doctor</h2>
+  <form name="doctorForm" method="post" onsubmit="return saveDoctor()">
+    <div class="form-row">
+      <div class="col-full"><div class="field"><label for="doctorId">Doctor ID</label><input type="text" id="doctorId" class="readonly" readonly></div></div>
+      <div class="col-full"><div class="field"><label for="fullName">Full name <span class="required">*</span></label><input type="text" id="fullName" ><span class="error" id="error-fullName"></span></div></div><div class="col-half"><div class="field"><label for="specialization">Specialization <span class="required">*</span></label><select id="specialization"><option value="">Select specialization</option><option>Cardiology</option><option>Dermatology</option><option>ENT</option><option>General Medicine</option><option>Gynecology</option><option>Neurology</option><option>Orthopedics</option><option>Pediatrics</option></select><span class="error" id="error-specialization"></span></div></div><div class="col-half"><div class="field"><label for="status">Status <span class="required">*</span></label><select id="status"><option>Active</option><option>On leave</option><option>Inactive</option></select><span class="error" id="error-status"></span></div></div><div class="col-half"><div class="field"><label for="phone">Phone <span class="required">*</span></label><input type="text" id="phone" ><span class="error" id="error-phone"></span></div></div><div class="col-half"><div class="field"><label for="email">Email <span class="required">*</span></label><input type="text" id="email" ><span class="error" id="error-email"></span></div></div><div class="col-full"><div class="field"><label for="consultationFee">Consultation fee (BDT) <span class="required">*</span></label><input type="number" id="consultationFee" min="0"><span class="error" id="error-consultationFee"></span></div></div>
+      <div class="col-full"><div class="field"><label>Available days <span class="required">*</span></label><span class="day-option"><input type="checkbox" id="day-Sun"> <label for="day-Sun">Sun</label></span><span class="day-option"><input type="checkbox" id="day-Mon"> <label for="day-Mon">Mon</label></span><span class="day-option"><input type="checkbox" id="day-Tue"> <label for="day-Tue">Tue</label></span><span class="day-option"><input type="checkbox" id="day-Wed"> <label for="day-Wed">Wed</label></span><span class="day-option"><input type="checkbox" id="day-Thu"> <label for="day-Thu">Thu</label></span><span class="day-option"><input type="checkbox" id="day-Fri"> <label for="day-Fri">Fri</label></span><span class="day-option"><input type="checkbox" id="day-Sat"> <label for="day-Sat">Sat</label></span><span class="error" id="error-availableDays"></span></div></div>
+    </div>
+    <div class="form-buttons"><button type="button" class="btn" onclick="closeModal('doctor-modal')">Cancel</button> <input type="submit" class="btn btn-primary" id="save-button" value="Save doctor"></div>
+  </form>
+</div></div>
+
+<div class="modal" id="details-modal"><div class="modal-box">
+  <h2>Doctor details</h2>
+  <table class="details" id="details-table"></table>
+  <div class="form-buttons"><button class="btn" onclick="closeModal('details-modal')">Close</button> <button class="btn btn-primary" onclick="editFromDetails()">Edit doctor</button></div>
+</div></div>
+<div class="footer">MediCare frontend prototype. All data is fictional.</div>
+<script src="js/main.js"></script>
+<script src="js/data.js"></script>
+<script src="js/doctors.js"></script>
+<script>showDoctors();</script>
+</body>
+</html>

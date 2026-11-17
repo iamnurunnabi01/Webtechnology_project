@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MediCare | Hospital management prototype</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+<body>
+<div class="header"><a class="brand" href="index.html">MediCare</a><span class="user">Frontend prototype</span></div>
+<div class="topnav">
+  <a href="#services">Services</a><a href="#doctors">Doctors</a><a href="#why">Why MediCare</a><a href="#stories">Patient stories</a><a href="#contact">Contact</a>
+  <a class="nav-right" href="appointments.html">Book appointment</a><a class="nav-right" href="login.html">Sign in</a>
+</div>
+
+<div class="hero"><div class="container">
+  <div class="hero-text">
+    <h1>Care that starts with an easy appointment.</h1>
+    <p class="lead">Find the right specialist, choose a day that works, and book in a few clicks. MediCare keeps patients, doctors and schedules organised in one place.</p>
+    <a class="btn btn-primary" href="appointments.html">Book an appointment</a> <a class="btn" href="#doctors">Meet our doctors</a>
+    <p class="muted small" style="margin-top:16px;">This is a frontend prototype. Booking uses fictional demo data and no real appointment is made.</p>
+  </div>
+  <div class="hero-steps"><div class="card"><div class="card-header"><h2>How booking works</h2></div><div class="card-body">
+    <div class="step"><div class="step-number">1</div><h3>Choose a doctor</h3><p class="muted small">Browse specialists and see which days they work.</p></div>
+    <div class="step"><div class="step-number">2</div><h3>Pick a day and time</h3><p class="muted small">Only days the doctor works and free time slots are accepted.</p></div>
+    <div class="step"><div class="step-number">3</div><h3>Get it confirmed</h3><p class="muted small">Reception reviews the request and confirms the appointment.</p></div>
+  </div></div></div>
+</div></div>
+
+<div class="section"><div class="container">
+  <div class="row">
+    <div class="col-4"><div class="card card-body center"><div class="stat-big" id="stat-doctors">0</div><div class="muted">Doctors</div></div></div>
+    <div class="col-4"><div class="card card-body center"><div class="stat-big" id="stat-patients">0</div><div class="muted">Registered patients</div></div></div>
+    <div class="col-4"><div class="card card-body center"><div class="stat-big" id="stat-appointments">0</div><div class="muted">Appointments booked</div></div></div>
+    <div class="col-4"><div class="card card-body center"><div class="stat-big">24/7</div><div class="muted">Emergency desk</div></div></div>
+  </div>
+  <p class="muted small">Doctor, patient and appointment numbers are counted from the fictional demo records.</p>
+</div></div>
+
+<div class="section section-alt" id="services"><div class="container">
+  <h2>Medical services</h2><p class="lead">Care across the departments most families need.</p>
+  <div class="row">
+    <div class="col-3"><div class="card card-body"><h3>Cardiology</h3><p class="muted">Heart check-ups, follow-up visits and ongoing monitoring.</p></div></div>
+    <div class="col-3"><div class="card card-body"><h3>Pediatrics</h3><p class="muted">Care for infants, children and teenagers.</p></div></div>
+    <div class="col-3"><div class="card card-body"><h3>Orthopedics</h3><p class="muted">Bone, joint and muscle care from consultation to follow-up.</p></div></div>
+    <div class="col-3"><div class="card card-body"><h3>Dermatology</h3><p class="muted">Skin, hair and nail consultations.</p></div></div>
+    <div class="col-3"><div class="card card-body"><h3>General medicine</h3><p class="muted">A first stop for everyday health concerns and routine check-ups.</p></div></div>
+    <div class="col-3"><div class="card card-body"><h3>Diagnostics</h3><p class="muted">Laboratory tests arranged alongside your consultation.</p></div></div>
+  </div>
+</div></div>
+
+<div class="section" id="doctors"><div class="container">
+  <h2>Featured doctors</h2><p class="lead">Doctors who are free today are shown first.</p>
+  <div class="row" id="featured-doctors"></div>
+  <p><a class="btn" href="doctors.html">View the full directory</a></p>
+</div></div>
+
+<div class="section section-alt" id="why"><div class="container">
+  <h2>Why choose MediCare</h2><p class="lead">A hospital runs best when the basics are simple and easy to find.</p>
+  <div class="row">
+    <div class="col-2"><div class="card card-body"><h3>Simple booking</h3><p class="muted">Pick a doctor, day and time without phone queues.</p></div></div>
+    <div class="col-2"><div class="card card-body"><h3>Clear fees</h3><p class="muted">Each doctor's consultation fee is listed before you book.</p></div></div>
+    <div class="col-2"><div class="card card-body"><h3>Specialists in one place</h3><p class="muted">Several departments, so referrals stay under one roof.</p></div></div>
+    <div class="col-2"><div class="card card-body"><h3>Organised schedules</h3><p class="muted">Staff see patients, doctors and appointments side by side.</p></div></div>
+  </div>
+</div></div>
+
+<div class="section" id="stories"><div class="container">
+  <h2>Patient stories</h2><p class="lead">These stories are fictional placeholders written for this prototype. They are not real patient reviews.</p>
+  <div class="row">
+    <div class="col-3"><div class="card card-body"><span class="badge badge-demo">Demo content</span><p style="margin-top:10px;">Booking took a minute, and I knew the fee before I arrived.</p><p class="muted small">Sample patient A</p></div></div>
+    <div class="col-3"><div class="card card-body"><span class="badge badge-demo">Demo content</span><p style="margin-top:10px;">The doctor's working days were listed, so I picked a day that suited me.</p><p class="muted small">Sample patient B</p></div></div>
+    <div class="col-3"><div class="card card-body"><span class="badge badge-demo">Demo content</span><p style="margin-top:10px;">Reception confirmed my follow-up quickly and the visit started on time.</p><p class="muted small">Sample patient C</p></div></div>
+  </div>
+</div></div>
+
+<div class="section section-alt" id="contact"><div class="container">
+  <h2>Contact us</h2><p class="lead">The details below are demo placeholders, not a real hospital.</p>
+  <div class="row">
+    <div class="col-4"><div class="card card-body"><h3>Address</h3><p class="muted">House 12, Road 5, Dhanmondi, Dhaka</p></div></div>
+    <div class="col-4"><div class="card card-body"><h3>Phone</h3><p class="muted">+880 1700-000000</p></div></div>
+    <div class="col-4"><div class="card card-body"><h3>Email</h3><p class="muted">hello@medicare.test</p></div></div>
+    <div class="col-4"><div class="card card-body"><h3>Hours</h3><p class="muted">Daily 8:00 AM to 8:00 PM. Emergency desk always open.</p></div></div>
+  </div>
+</div></div>
+
+<div class="footer">&copy; 2026 MediCare prototype. Not a real medical service. | <a href="login.html">Staff sign in</a> | <a href="dashboard.html">Demo dashboard</a></div>
+<script src="js/main.js"></script>
+<script src="js/data.js"></script>
+<script src="js/home.js"></script>
+<script>showHome();</script>
+</body>
+</html>
