@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard | MediCare</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+<body>
+<div id="message"><span id="message-text"></span> <button class="btn btn-small" onclick="hideMessage()">Close</button></div>
+<div class="header"><a class="brand" href="index.html">MediCare</a><span class="user">Admin User (demo) | <a href="login.html">Log out</a></span></div>
+<div class="topnav"><a href="dashboard.html" class="active">Dashboard</a><a href="patients.html">Patients</a><a href="doctors.html">Doctors</a><a href="appointments.html">Appointments</a><a href="reports.html">Reports (soon)</a><a href="settings.html">Settings (soon)</a></div>
+<div class="page">
+  <div class="page-head">
+    <div class="float-left"><h1 id="welcome-title">Welcome</h1><p class="muted" id="welcome-date"></p></div>
+    <div class="float-right">
+      <a class="btn btn-primary" href="appointments.html">New appointment</a>
+      <a class="btn" href="patients.html">Add patient</a>
+      <a class="btn" href="doctors.html">Add doctor</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4 stat"><div class="card"><div class="stat-number" id="stat-patients">0</div><div class="muted">Total patients</div></div></div>
+    <div class="col-4 stat"><div class="card"><div class="stat-number" id="stat-doctors">0</div><div class="muted">Total doctors</div></div></div>
+    <div class="col-4 stat"><div class="card"><div class="stat-number" id="stat-today">0</div><div class="muted">Today's appointments</div></div></div>
+    <div class="col-4 stat"><div class="card"><div class="stat-number" id="stat-pending">0</div><div class="muted">Pending appointments</div></div></div>
+  </div>
+
+  <div class="row">
+    <div class="dash-main">
+      <div class="card">
+        <div class="card-header"><h2>Recent appointments</h2>
+          <div class="tools"><input type="text" id="search" aria-label="Search appointments" placeholder="Search patient, doctor, ID, status" oninput="showRecentAppointments()"></div></div>
+        <div class="table-wrap"><table id="appointments-table">
+          <thead><tr><th>ID</th><th>Patient</th><th>Doctor</th><th>Date &amp; time</th><th>Status</th><th>Update</th></tr></thead>
+          <tbody id="appointments-body"></tbody></table></div>
+        <div class="empty" id="empty-state"><h3>No appointments found</h3><p>Try a different name, ID or status.</p></div>
+      </div>
+    </div>
+    <div class="dash-side">
+      <div class="card"><div class="card-header"><h2>Appointment overview</h2></div><div class="card-body" id="overview"></div></div>
+      <div class="card"><div class="card-header"><h2>Recent activity</h2></div><div class="card-body">
+        <div class="activity-item">Appointment AP-5001 was confirmed<br><span class="muted small">10 min ago (demo)</span></div>
+        <div class="activity-item">New patient Ayesha Siddiqua registered<br><span class="muted small">3 days ago (demo)</span></div>
+        <div class="activity-item">Dr. Rubina Haque marked as on leave<br><span class="muted small">Yesterday (demo)</span></div>
+      </div></div>
+      <button class="btn" onclick="resetFromDashboard()">Reset demo data</button>
+    </div>
+  </div>
+</div>
+<div class="footer">MediCare frontend prototype. All data is fictional.</div>
+<script src="js/main.js"></script>
+<script src="js/data.js"></script>
+<script src="js/dashboard.js"></script>
+<script>showDashboard();</script>
+</body>
+</html>

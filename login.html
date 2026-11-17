@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in | MediCare</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+<body>
+<div class="login-box">
+  <h1 class="brand-title">MediCare</h1>
+  <h2>Sign in</h2>
+  <p class="muted">Use your work email and password.</p>
+  <div class="notice"><strong>Prototype only.</strong> This page does not check your credentials. Enter any valid email and a password of at least 6 characters to open the demo dashboard.</div>
+  <form name="loginForm" method="post" onsubmit="return validateLogin()">
+    <div class="field"><label for="email">Email</label><input type="text" class="login-input" id="email" placeholder="name@example.com"><span class="error" id="error-email"></span></div>
+    <div class="field"><label for="password">Password</label><input type="password" class="login-input" id="password"> <button type="button" class="btn btn-small" id="toggle-button" onclick="togglePassword()">Show</button><br><span class="error" id="error-password"></span></div>
+    <p><input type="checkbox" id="remember"> <label for="remember" style="display:inline; font-weight:normal;">Keep me signed in</label> <span class="muted small">(demo only, nothing is saved)</span></p>
+    <input type="submit" class="btn btn-primary" id="login-button" value="Sign in">
+  </form>
+  <p style="margin-top:20px;"><a href="index.html">Back to home</a></p>
+</div>
+<script src="js/main.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
