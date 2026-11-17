@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+- Added style.css for common website styling.
+- Added dashboard.css for dashboard-specific styling.
+- Added responsive.css for responsive layouts across different screen sizes.
+
 ## [1.0.0] - 2026-11-18
 
 ### Added

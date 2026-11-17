@@ -42,3 +42,10 @@
 ### 8. Settings
 - Hospital information.
 - Notification preferences.
+
+## CSS Styling
+
+- Common website styling using style.css.
+- Dashboard-specific styling using dashboard.css.
+- Responsive layouts using responsive.css.
+- Improved consistency and visual presentation across the website.

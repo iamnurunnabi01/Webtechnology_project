@@ -1,0 +1,15 @@
+/* Dashboard-only styles (same Lecture 02 rules: selectors, box model, float, position) */
+.stat .card { padding: 18px; }
+.stat-number { font-size: 30px; font-weight: bold; color: #0F766E; }
+.dash-main { float: left; width: 64%; min-width: 320px; }
+.dash-side { float: left; width: 34%; min-width: 280px; margin-left: 1%; }
+.overview-line { margin-bottom: 14px; overflow: hidden; }
+.overview-line .name { float: left; }
+.overview-line .count { float: right; color: #64748B; }
+.bar { clear: both; height: 8px; border-radius: 99px; background-color: #E2E8F0; overflow: hidden; }
+.bar-fill { height: 8px; }
+.fill-pending { background-color: #F59E0B; }
+.fill-confirmed { background-color: #0F766E; }
+.fill-completed { background-color: #16A34A; }
+.fill-cancelled { background-color: #DC2626; }
+.activity-item { padding: 10px 0; border-bottom: 1px solid #E2E8F0; font-size: 14px; }
