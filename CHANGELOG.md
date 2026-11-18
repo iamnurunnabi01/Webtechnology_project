@@ -1,5 +1,21 @@
 # Changelog
 
+## [Unreleased]
+
+## [Unreleased]
+
+### Added
+- Added data.js for data management and storage.
+- Added main.js for common JavaScript functionality.
+- Added login.js for login interactions.
+- Added home.js for home page interactions.
+- Added dashboard.js for dashboard functionality.
+
+### Added
+- Added style.css for common website styling.
+- Added dashboard.css for dashboard-specific styling.
+- Added responsive.css for responsive layouts across different screen sizes.
+
 ## [1.0.0] - 2026-11-18
 
 ### Added
