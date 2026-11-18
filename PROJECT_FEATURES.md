@@ -49,3 +49,11 @@
 - Dashboard-specific styling using dashboard.css.
 - Responsive layouts using responsive.css.
 - Improved consistency and visual presentation across the website.
+
+## JavaScript Core Functionality
+
+- Common JavaScript functions and interactions.
+- Data management and storage.
+- Login functionality.
+- Home page interactions.
+- Dashboard functionality.
