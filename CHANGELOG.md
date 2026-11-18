@@ -1,5 +1,10 @@
 # Changelog
 
+### Added
+- Added patients.js for patient CRUD operations.
+- Added doctors.js for doctor CRUD operations.
+- Added appointments.js for appointment CRUD operations.
+
 ## [Unreleased]
 
 ## [Unreleased]

@@ -57,3 +57,11 @@
 - Login functionality.
 - Home page interactions.
 - Dashboard functionality.
+
+## CRUD JavaScript Functionality
+
+- Patient record management (Create, Read, Update, Delete).
+- Doctor record management (Create, Read, Update, Delete).
+- Appointment record management (Create, Read, Update, Delete).
+- Search and filtering functionality.
+- Form validation.
